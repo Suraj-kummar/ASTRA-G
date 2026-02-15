@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headings: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Premium Palette */
+  --color-obsidian: #050505;
+  /* Deeper black for high contrast */
+  --color-carbon: #0a0a0c;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-purple: #bc13fe;
+  --color-neon-blue: #0066ff;
+  --color-hologram: rgba(0, 243, 255, 0.1);
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-ceramic: #fcfcfc;
+
+  --animate-scan: scan 4s linear infinite;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-grid-move: grid-move 20s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes scan {
+    0% {
+      top: -10%;
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      top: 110%;
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-glow {
+
+    0%,
+    100% {
+      opacity: 0.8;
+      filter: brightness(1);
+    }
+
+    50% {
+      opacity: 0.4;
+      filter: brightness(1.2);
+    }
+  }
+
+  @keyframes grid-move {
+    0% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-body bg-ceramic text-gray-900 transition-colors duration-500 antialiased;
+  }
+
+  .dark body {
+    @apply bg-obsidian text-white;
+  }
+
+  /* Cyberpunk Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00f3ff;
+    box-shadow: 0 0 10px #00f3ff;
+  }
+}
+
+@layer components {
+
+  /* Glassmorphism Utilities */
+  .glass-panel {
+    @apply bg-glass backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+
+  .glass-panel-heavy {
+    @apply bg-black/40 backdrop-blur-2xl border border-white/[0.05];
+  }
+
+  /* Text Effects */
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+  }
+
+  .text-glow-purple {
+    text-shadow: 0 0 20px rgba(188, 19, 254, 0.5);
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 0.02;
+    }
+
+    5% {
+      opacity: 0.05;
+    }
+
+    10% {
+      opacity: 0.02;
+    }
+
+    15% {
+      opacity: 0.06;
+    }
+
+    20% {
+      opacity: 0.02;
+    }
+
+    50% {
+      opacity: 0.02;
+    }
+
+    55% {
+      opacity: 0.05;
+    }
+
+    60% {
+      opacity: 0.02;
+    }
+
+    100% {
+      opacity: 0.02;
+    }
+  }
+
+  .animate-flicker {
+    animation: flicker 4s infinite;
+  }
+}
