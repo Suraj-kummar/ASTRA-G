@@ -78,18 +78,18 @@ The latest kernel update brings unparalleled immersion.
    ```bash
    git clone https://github.com/yourusername/astra-os.git
    cd astra-os
-   ```
+   ``````````
 
 2. **Install Dependencies**
    ```bash
    npm install
-   ```
+   ````
    *(Wait for quantum package resolution...)*
 
 3. **Ignite Engines**
    ```bash
    npm run dev
-   ```
+   ````
 
 4. **Access Portal**
    Open `http://localhost:5173` to begin the Boot Sequence.
