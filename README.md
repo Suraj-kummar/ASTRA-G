@@ -99,4 +99,4 @@ The latest kernel update brings unparalleled immersion.
 <div align="center">
   <p><i>System Status: <b>ONLINE</b> via ASTRA_OS Kernel v2.1.0</i></p>
   <p>Designed for the Explorers of Tomorrow.</p>
-</div>
+</div> 
